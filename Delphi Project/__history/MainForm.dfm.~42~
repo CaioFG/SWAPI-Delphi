@@ -1,0 +1,130 @@
+object MainFormMenu: TMainFormMenu
+  Left = 0
+  Top = 0
+  BorderStyle = bsDialog
+  Caption = 'Menu'
+  ClientHeight = 625
+  ClientWidth = 979
+  Color = clAppWorkSpace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object lblFirstFilter: TLabel
+    Left = 608
+    Top = 21
+    Width = 105
+    Height = 13
+    Caption = 'Select your first filter:'
+  end
+  object lblSecondFilter: TLabel
+    Left = 608
+    Top = 49
+    Width = 120
+    Height = 13
+    Caption = 'Select your second filter:'
+  end
+  object lblSearchFilter: TLabel
+    Left = 608
+    Top = 77
+    Width = 99
+    Height = 13
+    Caption = 'Specify your search:'
+  end
+  object Gauge1: TGauge
+    Left = 15
+    Top = 595
+    Width = 946
+    Height = 22
+    Progress = 0
+  end
+  object TreeView1: TTreeView
+    Left = 15
+    Top = 136
+    Width = 945
+    Height = 456
+    Align = alCustom
+    Indent = 19
+    TabOrder = 0
+  end
+  object cmbFirstFilter: TComboBox
+    Left = 735
+    Top = 18
+    Width = 225
+    Height = 22
+    Style = csOwnerDrawFixed
+    TabOrder = 1
+    OnChange = cmbFirstFilterChange
+    Items.Strings = (
+      'Planets'
+      'Characters'
+      'Films')
+  end
+  object cmbSecondFilter: TComboBox
+    Left = 735
+    Top = 46
+    Width = 225
+    Height = 22
+    Style = csOwnerDrawFixed
+    TabOrder = 2
+  end
+  object btnSearch: TButton
+    Left = 735
+    Top = 101
+    Width = 225
+    Height = 28
+    Caption = 'Search'
+    TabOrder = 3
+    OnClick = btnSearchClick
+  end
+  object edtSearch: TEdit
+    Left = 735
+    Top = 74
+    Width = 225
+    Height = 21
+    TabOrder = 4
+  end
+  object RESTClient1: TRESTClient
+    Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
+    AcceptCharset = 'utf-8, *;q=0.8'
+    BaseURL = 'https://swapi.dev/api/planets'
+    Params = <>
+    Left = 136
+    Top = 544
+  end
+  object RESTRequest1: TRESTRequest
+    Client = RESTClient1
+    Params = <>
+    Response = RESTResponse1
+    Left = 224
+    Top = 544
+  end
+  object RESTResponse1: TRESTResponse
+    Left = 328
+    Top = 544
+  end
+  object RESTClient2: TRESTClient
+    Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
+    AcceptCharset = 'utf-8, *;q=0.8'
+    BaseURL = 'https://swapi.dev/api/planets'
+    Params = <>
+    Left = 136
+    Top = 488
+  end
+  object RESTRequest2: TRESTRequest
+    Client = RESTClient2
+    Params = <>
+    Response = RESTResponse2
+    Left = 224
+    Top = 488
+  end
+  object RESTResponse2: TRESTResponse
+    Left = 328
+    Top = 488
+  end
+end
