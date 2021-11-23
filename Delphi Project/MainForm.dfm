@@ -2167,6 +2167,7 @@ object MainFormMenu: TMainFormMenu
     Align = alCustom
     Indent = 19
     TabOrder = 0
+    OnEditing = TreeView1Editing
   end
   object cmbFirstFilter: TComboBox
     Left = 152
@@ -2195,6 +2196,7 @@ object MainFormMenu: TMainFormMenu
     Width = 297
     Height = 28
     Caption = 'Search'
+    Default = True
     TabOrder = 3
     OnClick = btnSearchClick
   end
